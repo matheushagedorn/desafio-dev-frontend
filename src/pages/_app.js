@@ -12,7 +12,7 @@ export default function App() {
   const [weather, setWeather] = useState(null);
   const [error, setError] = useState("");
   const [citySuggestions, setCitySuggestions] = useState([]);
-  const [selectedCity, setSelectedCity] = useState("");
+  const [selectedCity, setSelectedCity] = useState({ name: "", country: "" });
 
   const handleFetchCitySuggestions = async (query) => {
     const suggestions = await fetchCitySuggestions(query);
@@ -20,13 +20,13 @@ export default function App() {
   };
 
   const handleFetchWeather = async () => {
-    if (!selectedCity) {
+    if (!selectedCity || !selectedCity.name) {
       setError("Por favor, selecione ou insira o nome de uma cidade válida.");
       return;
     }
 
     try {
-      const weatherData = await fetchWeather(selectedCity);
+      const weatherData = await fetchWeather(selectedCity.name);
       setWeather(weatherData);
       setError("");
     } catch (err) {
@@ -170,20 +170,28 @@ export default function App() {
     handleFetchCitySuggestions(query);
   };
 
-  const handleCitySelect = (cityName) => {
+  const handleCitySelect = async (cityName, country) => {
     setCity(cityName);
-    setSelectedCity(cityName);
+    setSelectedCity({ name: cityName, country });
     setCitySuggestions([]);
-    handleFetchWeather(cityName);
+
+    try {
+      const weatherData = await fetchWeather(cityName);
+      setWeather(weatherData);
+      setError("");
+    } catch (err) {
+      setError("Cidade não encontrada. Tente novamente.");
+      setWeather(null);
+    }
   };
 
   return (
     <div className="justify-center text-center flex flex-col items-center h-screen">
-      <h1>Aplicativo de Clima</h1>
-      <div className="relative w-3/12">
+      <h1 className="text-3xl font-bold mb-8">Manchester Weather</h1>
+      <div className="relative w-full sm:w-11/12 md:w-2/3 lg:w-1/2 mx-auto">
         <input
           type="text"
-          value={city}
+          value={city || ""}
           onChange={handleCityInputChange}
           placeholder="Digite o nome da cidade"
           className="border rounded-3xl border-black p-4 pl-8 w-full"
@@ -197,18 +205,21 @@ export default function App() {
             <li
               key={index}
               className="cursor-pointer hover:bg-gray-200 p-2"
-              onClick={() => handleCitySelect(suggestion)}
+              onClick={() =>
+                handleCitySelect(suggestion.name, suggestion.country)
+              }
             >
-              {suggestion}
+              {suggestion.name}, {suggestion.country}
             </li>
           ))}
         </ul>
       )}
       {error && <p className="text-red-500 mt-2">{error}</p>}
+
       {weather && (
         <div className="mt-6">
-          <div className="flex-col justify-center gap-4">
-            <p className="text-5xl">
+          <div className="flex-col text-center justify-center gap-4">
+            <p className="flex justify-center items-center text-5xl">
               {getTranslatedWeather(weather.weather[0].main).icon}
             </p>
             <p className="text-gray-500 mt-6">
@@ -216,12 +227,15 @@ export default function App() {
             </p>
             <p className="text-5xl mt-6">{weather.main.temp.toFixed(0)}°C</p>
           </div>
-          <h2 className="text-5xl">{weather.name}</h2>
-          <div className="m-6 gap-6 flex">
-            <div className="flex items-center gap-2">
+          <h2 className="text-5xl">
+            {selectedCity.name}{" "}
+            {selectedCity.country && `(${selectedCity.country})`}
+          </h2>
+          <div className="m-6 gap-6 flex items-center justify-center">
+            <div className="flex items-center gap-2 text-2xl">
               <ArrowUpwardOutlinedIcon /> {weather.main.temp_max.toFixed(0)}°C
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 text-2xl">
               <ArrowDownwardOutlinedIcon /> {weather.main.temp_min.toFixed(0)}°C
             </div>
           </div>
