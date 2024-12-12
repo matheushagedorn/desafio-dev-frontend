@@ -1,5 +1,4 @@
 export const fetchWeather = async (city) => {
-  console.log("Buscando clima para:", city);
   const apiKey = "3b160403fab665468371376faad5d880";
   try {
     const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`);
