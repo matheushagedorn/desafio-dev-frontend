@@ -90,7 +90,8 @@ No geral, o componente é centralizado horizontalmente e verticalmente. Possui u
   
 5. Observações:
 
-• Todos os ícones utilizados são do Material UI  
+• O código está responsivo para diversos tamanhos de tela.  
+• Todos os ícones utilizados são do Material UI.    
 • Defini a fonte Montserrat no arquivo global CSS.  
 • Configurei os arquivos `babel.config.js` e `jest.config.js` para realização dos testes.  
   
