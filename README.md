@@ -86,14 +86,14 @@ Aqui é onde trabalhei nas requisições e nos retornos da API.
 
 4. Estrutura HTML
     
-No geral, o componente é centralizado horizontalmente e verticalmente. Possui um título chamado **Manchester Weather** e um campo de entrada do usuário com um ícone de pesquisa. Quando o usuário está digitando, aparece uma lista de sugestões de cidades para o usuário selecionar (isso exclui a possibilidade do usuário inserir uma cidade incorretamente). Assim que o usuário seleciona a cidade, exibe na tela o ícone referente ao clima atual, a descrição do clima, a temperatura atual, o nome da cidade selecionada juntamente com o código do país, e logo abaixo as máximas e mínimas para aquela cidade representados por ícones de seta.
-
+No geral, o componente é centralizado horizontalmente e verticalmente. Possui um título chamado **Manchester Weather** e um campo de entrada do usuário com um ícone de pesquisa. Quando o usuário está digitando, aparece uma lista de sugestões de cidades para o usuário selecionar (isso exclui a possibilidade do usuário inserir uma cidade incorretamente). Assim que o usuário seleciona a cidade, exibe na tela o ícone referente ao clima atual, a descrição do clima, a temperatura atual, o nome da cidade selecionada juntamente com o código do país, e logo abaixo as máximas e mínimas para aquela cidade representados por ícones de seta.  
+  
 5. Observações:
 
-• Todos os ícones utilizados são do Material UI
-• Defini a fonte Montserrat no arquivo global CSS.
-• Configurei os arquivos `babel.config.js` e `jest.config.js` para realização dos testes.
-
-6. Deploy
-
-Realizei o deploy do projeto no Vercel: [https://desafio-dev-frontend-4c0cm6a1e-matheus-hagedorns-projects.vercel.app/](https://desafio-dev-frontend-4c0cm6a1e-matheus-hagedorns-projects.vercel.app/)
+• Todos os ícones utilizados são do Material UI  
+• Defini a fonte Montserrat no arquivo global CSS.  
+• Configurei os arquivos `babel.config.js` e `jest.config.js` para realização dos testes.  
+  
+6. Deploy  
+  
+Realizei o deploy do projeto no Vercel: [https://desafio-dev-frontend-4c0cm6a1e-matheus-hagedorns-projects.vercel.app/](https://desafio-dev-frontend-4c0cm6a1e-matheus-hagedorns-projects.vercel.app/)  
