@@ -90,4 +90,4 @@ No geral, o componente é centralizado horizontalmente e verticalmente. Possui u
 
 5. Deploy
 
-Fiz o deploy do projeto no [Vercel](https://desafio-dev-frontend-4c0cm6a1e-matheus-hagedorns-projects.vercel.app/)
+Realizei o deploy do projeto no Vercel: [https://desafio-dev-frontend-4c0cm6a1e-matheus-hagedorns-projects.vercel.app/](https://desafio-dev-frontend-4c0cm6a1e-matheus-hagedorns-projects.vercel.app/)
