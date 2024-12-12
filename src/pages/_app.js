@@ -7,6 +7,13 @@ import ArrowUpwardOutlinedIcon from "@mui/icons-material/ArrowUpwardOutlined";
 import ArrowDownwardOutlinedIcon from "@mui/icons-material/ArrowDownwardOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 
+import WbSunnyTwoToneIcon from '@mui/icons-material/WbSunnyTwoTone';
+import WbCloudyTwoToneIcon from '@mui/icons-material/WbCloudyTwoTone';
+import WaterDropTwoToneIcon from '@mui/icons-material/WaterDropTwoTone';
+import ThunderstormTwoToneIcon from '@mui/icons-material/ThunderstormTwoTone';
+import AcUnitTwoToneIcon from '@mui/icons-material/AcUnitTwoTone';
+import DehazeTwoToneIcon from '@mui/icons-material/DehazeTwoTone';
+
 export default function App() {
   const [city, setCity] = useState("");
   const [weather, setWeather] = useState(null);
@@ -38,123 +45,63 @@ export default function App() {
   const weatherTranslations = {
     Clear: {
       text: "Céu limpo",
-      icon: (
-        <Image
-          src="/sunny.svg"
-          alt="Céu limpo"
-          width={180}
-          height={38}
-          priority
-        />
-      ),
+      icon: (<WbSunnyTwoToneIcon fontSize="inherit" style={{ fontSize: "120px" }} />),
     },
     Clouds: {
       text: "Nuvens",
-      icon: (
-        <Image
-          src="/cloudy.svg"
-          alt="Nuvens"
-          width={180}
-          height={38}
-          priority
-        />
-      ),
+      icon: (<WbCloudyTwoToneIcon fontSize="inherit" style={{ fontSize: "120px" }} />),
     },
     Rain: {
       text: "Chuva",
-      icon: (
-        <Image src="/rain.svg" alt="Chuva" width={180} height={38} priority />
-      ),
+      icon: (<WaterDropTwoToneIcon fontSize="inherit" style={{ fontSize: "120px" }} />),
     },
     Drizzle: {
       text: "Garoa",
-      icon: (
-        <Image src="/rain.svg" alt="Garoa" width={180} height={38} priority />
-      ),
+      icon: (<WaterDropTwoToneIcon fontSize="inherit" style={{ fontSize: "120px" }} />),
     },
     Thunderstorm: {
       text: "Trovoada",
-      icon: (
-        <Image
-          src="/thunderstorm.svg"
-          alt="Céu limpo"
-          width={180}
-          height={38}
-          priority
-        />
-      ),
+      icon: (<ThunderstormTwoToneIcon fontSize="inherit" style={{ fontSize: "120px" }} />),
     },
     Snow: {
       text: "Neve",
-      icon: (
-        <Image
-          src="/snow.svg"
-          alt="Céu limpo"
-          width={180}
-          height={38}
-          priority
-        />
-      ),
+      icon: (<AcUnitTwoToneIcon fontSize="inherit" style={{ fontSize: "120px" }} />),
     },
     Mist: {
       text: "Névoa",
-      icon: (
-        <Image src="/mist.svg" alt="Névoa" width={180} height={38} priority />
-      ),
+      icon: (<DehazeTwoToneIcon fontSize="inherit" style={{ fontSize: "120px" }} />),
     },
     Smoke: {
       text: "Fumaça",
-      icon: (
-        <Image src="/mist.svg" alt="Fumaça" width={180} height={38} priority />
-      ),
+      icon: (<DehazeTwoToneIcon fontSize="inherit" style={{ fontSize: "120px" }} />),
     },
     Haze: {
       text: "Neblina",
-      icon: (
-        <Image src="/mist.svg" alt="Neblina" width={180} height={38} priority />
-      ),
+      icon: (<DehazeTwoToneIcon fontSize="inherit" style={{ fontSize: "120px" }} />),
     },
     Dust: {
       text: "Poeira",
-      icon: (
-        <Image src="/mist.svg" alt="Poeira" width={180} height={38} priority />
-      ),
+      icon: (<DehazeTwoToneIcon fontSize="inherit" style={{ fontSize: "120px" }} />),
     },
     Fog: {
       text: "Nevoeiro",
-      icon: (
-        <Image
-          src="/mist.svg"
-          alt="Nevoeiro"
-          width={180}
-          height={38}
-          priority
-        />
-      ),
+      icon: (<DehazeTwoToneIcon fontSize="inherit" style={{ fontSize: "120px" }} />),
     },
     Sand: {
       text: "Areia",
-      icon: (
-        <Image src="/mist.svg" alt="Areia" width={180} height={38} priority />
-      ),
+      icon: (<DehazeTwoToneIcon fontSize="inherit" style={{ fontSize: "120px" }} />),
     },
     Ash: {
       text: "Cinzas",
-      icon: (
-        <Image src="/mist.svg" alt="Cinzas" width={180} height={38} priority />
-      ),
+      icon: (<DehazeTwoToneIcon fontSize="inherit" style={{ fontSize: "120px" }} />)
     },
     Squall: {
       text: "Rajada",
-      icon: (
-        <Image src="/mist.svg" alt="Rajada" width={180} height={38} priority />
-      ),
+      icon: (<DehazeTwoToneIcon fontSize="inherit" style={{ fontSize: "120px" }} />)
     },
     Tornado: {
       text: "Tornado",
-      icon: (
-        <Image src="/mist.svg" alt="Tornado" width={180} height={38} priority />
-      ),
+      icon: (<DehazeTwoToneIcon fontSize="inherit" style={{ fontSize: "120px" }} />)
     },
   };
 
@@ -188,7 +135,7 @@ export default function App() {
   return (
     <div className="justify-center text-center flex flex-col items-center h-screen">
       <h1 className="text-3xl font-bold mb-8">Manchester Weather</h1>
-      <div className="relative w-full sm:w-11/12 md:w-2/3 lg:w-1/2 mx-auto">
+      <div className="relative w-full sm:w-11/12 md:w-2/3 lg:w-1/2 mx-auto p-2">
         <input
           type="text"
           value={city || ""}
