@@ -61,28 +61,28 @@ Aqui é onde trabalhei nas requisições e nos retornos da API.
 3. Funções:
    
     ### handleFetchCitySuggestions
-       1. Faz uma chamada para a API para obter sugestões de cidades com base na string que o usuário digitou.
-       2. Atualiza `citySuggestions` com o retorno das sugestões.
+       • Faz uma chamada para a API para obter sugestões de cidades com base na string que o usuário digitou.
+       • Atualiza `citySuggestions` com o retorno das sugestões.
 
     ### handleFetchWeather
-       1. Verifica se uma cidade válida foi selecionada.
-       2. Faz uma chamada à API para buscar o clima para a cidade selecionada.
-       3. Atualiza `weather` com os dados retornados ou define uma mensagem de erro caso nenhuma cidade seja encontrada.
+       • Verifica se uma cidade válida foi selecionada.
+       • Faz uma chamada à API para buscar o clima para a cidade selecionada.
+       • Atualiza `weather` com os dados retornados ou define uma mensagem de erro caso nenhuma cidade seja encontrada.
     
     ### getTranslatedWeather
     
-       1. Como os dados da API são retornados em inglês, nessa função realizo a tradução para o português.
-       2. Defino os ícones com base em cada retorno da API.
+       • Como os dados da API são retornados em inglês, nessa função realizo a tradução para o português.
+       • Defino os ícones com base em cada retorno da API.
 
     ### handleInputChange
 
-       1. Atualiza `city` com o valor digitado pelo usuário.
-       2. Chama `handleFetchCitySuggestions` para obter a sugestão das cidades.
+       • Atualiza `city` com o valor digitado pelo usuário.
+       • Chama `handleFetchCitySuggestions` para obter a sugestão das cidades.
 
     ### handleCitySelect
 
-       1. Atualiza `city` e `selectedCity` com a cidade selecionada.  
-       2. Chama `fetchWeather` para obter os dados do clima para a cidade selecionada
+       • Atualiza `city` e `selectedCity` com a cidade selecionada.  
+       • Chama `fetchWeather` para obter os dados do clima para a cidade selecionada
 
 4. Estrutura HTML
     
